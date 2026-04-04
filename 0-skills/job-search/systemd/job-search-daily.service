@@ -1,0 +1,10 @@
+[Unit]
+Description=Daily job search via Claude Code
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/harness/0-skills/job-search/job-search.sh
+Environment=HOME=%h
+Environment=PATH=%h/.local/bin:/run/current-system/sw/bin:/usr/bin:/bin

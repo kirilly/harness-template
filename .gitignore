@@ -1,0 +1,18 @@
+# Secrets
+.env
+*.age
+secrets/
+
+# Runtime state
+/tmp/harness-session-*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+*.swo
+*~
+.vscode/
+.idea/

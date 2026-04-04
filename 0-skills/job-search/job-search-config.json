@@ -1,0 +1,8 @@
+{
+  "keywords": "software engineer",
+  "location": "remote",
+  "salary_min": 0,
+  "exclude": ["staffing agency", "clearance required"],
+  "boards": ["linkedin", "indeed"],
+  "max_results": 20
+}
