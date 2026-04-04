@@ -5,10 +5,10 @@
 Before starting, you need:
 
 1. **Claude Pro subscription** ($20/mo) — sign up at https://claude.ai with your email
-2. **SSH key** on your Mac/PC:
+2. **SSH key** — open WSL terminal (Ubuntu) and run:
    ```bash
    ssh-keygen -t ed25519 -f ~/.ssh/id_vps -N ""
-   cat ~/.ssh/id_vps.pub   # send this to the person setting up your VPS
+   cat ~/.ssh/id_vps.pub   # send this to the admin setting up your VPS
    ```
 3. **Telegram bot** (optional — the admin can create this for you):
    - Open Telegram → search @BotFather → `/newbot`
@@ -40,9 +40,9 @@ Useful things to ask:
 
 ### Configure job search
 
-Edit your preferences:
+Edit your preferences (from WSL terminal):
 ```bash
-ssh -p 2222 dev@<YOUR_VPS_IP>
+ssh -p 2222 -i ~/.ssh/id_vps dev@<YOUR_VPS_IP>
 nano ~/harness/0-skills/job-search/job-search-config.json
 ```
 
@@ -71,8 +71,9 @@ Ask Claude to help you create your first project:
 
 ### SSH access
 
+From WSL terminal:
 ```bash
-ssh -p 2222 dev@<YOUR_VPS_IP>
+ssh -p 2222 -i ~/.ssh/id_vps dev@<YOUR_VPS_IP>
 ```
 
 ### Useful commands on VPS
