@@ -1,0 +1,50 @@
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HARNESS_ROOT/.claude/hooks/scripts/self-certification-guard.sh"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HARNESS_ROOT/.claude/hooks/scripts/three-file-sync-check.sh"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$HARNESS_ROOT/.claude/hooks/scripts/stop-session-summary.sh"
+          }
+        ]
+      }
+    ]
+  },
+  "permissions": {
+    "allow": [
+      "Bash(ls *)",
+      "Bash(cat *)",
+      "Bash(git status*)",
+      "Bash(git log*)",
+      "Bash(git diff*)"
+    ],
+    "deny": [
+      "Bash(rm -rf /*)",
+      "Bash(rm -rf ~*)"
+    ]
+  }
+}
