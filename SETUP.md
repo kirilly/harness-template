@@ -49,7 +49,7 @@ ssh -i ~/.ssh/id_vps root@<VPS_IP>
 ```bash
 # On the VPS as root:
 cd /etc/nixos
-git clone https://github.com/kirilly/nix-vps.git setup
+git clone https://github.com/kirilly/nix-vps-template.git setup
 cd setup
 cp config.env.example config.env
 ```
